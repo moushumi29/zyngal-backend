@@ -1,4 +1,4 @@
-As it was not hosted
+As it was not hosted,
 you can clone it and see in your system.
 
 step 1: clone it 
