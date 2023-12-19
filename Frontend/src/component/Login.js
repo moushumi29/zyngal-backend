@@ -7,6 +7,7 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
+  const [error, seError] = useState(false);
 
   const loginUser = async (userDetails) => {
     try {
@@ -18,6 +19,7 @@ const Login = () => {
       sessionStorage.setItem("password", JSON.stringify(password));
     } catch (err) {
       console.log("err: ", err);
+      seError(true);
     }
   };
 
@@ -56,6 +58,7 @@ const Login = () => {
           placeholder="Enter you password"
           ref={passwordRef}
         />
+        {error && <div style={{color:"red"}}>Email or Password is not valid</div>}
         <button onClick={handleSubmit}>Login</button>
       </form>
     </div>
